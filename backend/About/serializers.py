@@ -13,14 +13,14 @@ class PostImageSerializer(serializers.ModelSerializer):
         fields = ['image','title']
         
 class AboutExprienceSerializer(serializers.ModelSerializer):
-    # title = serializers.RelatedField(source = )
+    images = PostImageSerializer(many=True)
     class Meta:
         model = AboutExprience
         #fields = '__all__'
-        fields = ['id','name','description','video','images',]   
- 
+        fields = ['id','name','description','video','images',]  
         
- 
+        
+
 class AboutFrontSerializer(serializers.ModelSerializer):
     class Meta:
         model = AboutFront

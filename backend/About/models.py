@@ -42,34 +42,7 @@ class PostImage(models.Model):
     image = models.FileField(upload_to = 'images/', )
 
     
-    # def __file__(self):
-    #     return '%d: %s' % (self.image, self.title)
-
-    # class Meta:
-        # unique_together = ['title', 'image','video']
-
- 
-    # def __str__(self):
-    #     return self.title
     
-
-
-
-
-# class Photo(models.Model):
-#     # lesson = models.ForeignKey(AboutExprience, on_delete=models.CASCADE, related_name='photos')
-#     photo = models.ImageField(upload_to="thebox/%Y/%m/%d/")
-
-#     # resizing the image, you can change parameters like size and quality.
-#     def save(self, *args, **kwargs):
-#        super(Photo, self).save(*args, **kwargs)
-#       #  img = Image.open(self.photo.path)
-#       #  if img.height > 1125 or img.width > 1125:
-#       #      img.thumbnail((1125,1125))
-#       #  img.save(self.photo.path,quality=70,optimize=True)
-       
-#     def __str__(self):
-#       return self.photo
       
 
     
