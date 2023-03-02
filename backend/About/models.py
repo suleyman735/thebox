@@ -29,9 +29,11 @@ class AboutHeader(models.Model):
 
 class AboutExprience(models.Model):
     name = models.CharField(max_length=15,null=True,)
-    # images = models.FileField(upload_to = 'images/')
+    
     description = models.TextField(max_length=280,null=True)
     video = models.FileField(upload_to='videos_uploaded',null=True,validators=[FileExtensionValidator(allowed_extensions=['MOV','avi','mp4','webm','mkv'])])
+
+    
 
     def __str__(self):
       return self.name
@@ -40,6 +42,12 @@ class PostImage(models.Model):
     post = models.ForeignKey(AboutExprience, default=None, related_name='images', on_delete=models.CASCADE)
     title = models.CharField(max_length=15,null=True,)
     image = models.FileField(upload_to = 'images/', )
+    
+class ProfesionalSection(models.Model):
+      header = models.TextField(max_length=280,null=True)
+      smallDescription = models.TextField(max_length=280,null=True)
+      icon = models.FileField(upload_to = 'images/', )
+      post = models.ForeignKey(AboutExprience, default=None, related_name='ProfesionalSection', on_delete=models.CASCADE)
 
     
     

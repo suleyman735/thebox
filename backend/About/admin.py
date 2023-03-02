@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from . models import AboutHeader,AboutFront,AboutExprience,PostImage
+from . models import AboutHeader,AboutFront,AboutExprience,PostImage,ProfesionalSection
 
 # admin.site.register(AboutHeader)
 @admin.register(AboutHeader)
@@ -16,13 +16,21 @@ class AboutAdmin(admin.ModelAdmin):
 
 class PostImageAdmin(admin.StackedInline):
     model = PostImage
+    
+class ProfesionalSectionAdmin(admin.StackedInline):
+    model = ProfesionalSection
  
 @admin.register(AboutExprience)
 class PostAdmin(admin.ModelAdmin):
-    inlines = [PostImageAdmin]
+    inlines = [PostImageAdmin,ProfesionalSectionAdmin]
+
+    
+
+    
  
     class Meta:
        model = AboutExprience
+
  
 # @admin.register(PostImage)
 # class PostImageAdmin(admin.ModelAdmin):
