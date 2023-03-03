@@ -46,12 +46,14 @@ class PostImage(models.Model):
 class ProfesionalSection(models.Model):
       header = models.TextField(max_length=280,null=True)
       smallDescription = models.TextField(max_length=280,null=True)
-      icon = models.FileField(upload_to = 'images/', )
+      icon = models.FileField(upload_to = 'images/', blank=True )
       post = models.ForeignKey(AboutExprience, default=None, related_name='ProfesionalSection', on_delete=models.CASCADE)
-
-    
-    
       
+
+class CounterSelection(models.Model):
+      numbers= models.CharField(max_length=15,null=True,)
+      header = models.CharField(max_length=50,null=True,)
+      post = models.ForeignKey(AboutExprience, default=None, related_name='CounterSelection', on_delete=models.CASCADE)
 
     
 

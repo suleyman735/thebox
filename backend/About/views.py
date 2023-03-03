@@ -4,7 +4,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.renderers import JSONRenderer
 from .serializers import AboutHeaderSerializer,AboutExprienceSerializer,AboutFrontSerializer
-from .models import AboutHeader,AboutFront,AboutExprience,PostImage
+from .models import AboutHeader,AboutFront,AboutExprience
 from rest_framework.parsers import MultiPartParser, FormParser
 
 # Create your views here.
